@@ -1,6 +1,6 @@
 
 """
-Tic Tac Toe Player with Decison Making for Score Optmisation
+Assignment: Tic Tac Toe Player with Decison Making for Score Optmisation
 """
 import math
 import random
@@ -15,7 +15,7 @@ EMPTY = None
 
 def initial_state():
     """
-    Starting state of the board.
+    Define starting state of the board.
     """
     return [[EMPTY, EMPTY, EMPTY],
             [EMPTY, EMPTY, EMPTY],
@@ -24,19 +24,19 @@ def initial_state():
 
 def player(board):
     """
-    Player who has the next turn on a board.
+    Determine player who has the next turn on a board.
     """
     #count number of marks on the board, whoever has fewest marks (X, O) will have the next turn
     #define counting variables
     XCount = 0
     OCount = 0
-# EmptySquareCount = 0
+EmptySquareCount = 0
 
     #count X, O and empty on board by row
     for row in board:
         XCount = XCount + row.count(X)
         OCount += OCount +row.count(O)
-#    EmptySquareCount += EmptySquareCount + row.count(EMPTY)
+    EmptySquareCount += EmptySquareCount + row.count(EMPTY)
 
     #return player with next turn
     if XCount > OCount:
